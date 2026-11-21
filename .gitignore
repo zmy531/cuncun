@@ -1,0 +1,19 @@
+# 构建产物
+/build/
+*.idsig
+*.ap_
+*.dex
+*.class
+
+# 签名与密钥（不要上传）
+*.jks
+*.keystore
+keys/
+local.properties
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

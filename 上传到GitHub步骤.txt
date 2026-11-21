@@ -1,0 +1,68 @@
+存存 CUN CUN · 上传到 GitHub 的步骤
+====================================
+
+这个文件夹（桌面\cuncun）已经是一份可以直接推上去的仓库内容：
+源码、图标、README、LICENSE、截图、还有签好名的 cuncun-1.5.0.apk 都在里面。
+
+
+一、先在 GitHub 建仓库
+----------------------
+1. 打开 https://github.com/new
+2. Repository name 填：cuncun
+3. 选 Public（想私有就选 Private，不影响后续步骤）
+4. 下面的 "Add a README / .gitignore / license" 全部不要勾（我们本地已经有了）
+5. 点 Create repository
+
+建完后页面上会显示一个地址，形如：
+   https://github.com/zmy531/cuncun.git
+
+
+二、把这个文件夹变成 git 仓库并推上去
+--------------------------------------
+在桌面\cuncun 文件夹里空白处右键 →「在终端中打开」（或 Shift+右键 → 在此处打开 PowerShell），
+然后一条一条执行：
+
+   git init
+   git add .
+   git commit -m "存存 CUN CUN 1.5.0：关系网重做、AI 直存、首页堆叠动画"
+   git branch -M main
+   git remote add origin https://github.com/zmy531/cuncun.git
+   git push -u origin main
+
+第一次推送会要你登录：浏览器会弹一个授权窗口，点同意即可。
+如果提示要用户名密码，密码那一步填的是 Personal Access Token（不是账号密码）：
+GitHub → 右上头像 → Settings → Developer settings → Personal access tokens → Tokens(classic)
+→ Generate new token，勾上 repo 权限，生成后复制那串字符当密码用。
+
+
+三、把 APK 挂到 Releases（别人下载更方便）
+------------------------------------------
+1. 仓库页面右侧 → Releases → Create a new release
+2. Tag version 填：v1.5.0
+3. Release title 填：存存 1.5.0
+4. 说明里可以粘贴 README 的「版本历史」那一段
+5. 把 cuncun-1.5.0.apk 拖进 Attach binaries 区域
+6. Publish release
+
+README 里的下载链接写的就是 Releases，挂上去之后点开就能下。
+
+
+四、以后改完代码怎么更新
+------------------------
+   git add .
+   git commit -m "改了什么"
+   git push
+
+版本号要同时改三个地方（不然覆盖安装会失败）：
+   AndroidManifest.xml 的 android:versionCode / android:versionName
+   build.ps1 的 $apkName、--version-code、--version-name
+   MainActivity.java 里 Bridge.info() 的 version 字符串
+
+
+五、几点提醒
+------------
+- .gitignore 已经把 build/、*.jks、*.idsig 排除掉了。签名密钥（cuncun.jks）千万别上传，
+  一旦别人拿到就能签出和你一样的包。
+- build.ps1 里目前是本地自用口令（cuncun2026），公开仓库里建议改成从环境变量读取。
+- 截图在 screenshots/ 里，README 已经按文件名引用好了，换图记得同名覆盖。
+- 想加演示 GIF，放到 screenshots/ 下，README 里用 ![](screenshots/xxx.gif) 引用即可。

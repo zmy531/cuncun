@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<title>存存</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!-- 首次启动引导 -->
+<div class="welcome" id="welcome">
+  <div class="w-aurora"></div>
+  <div class="w-track" id="wTrack">
+    <section class="w-slide">
+      <div class="w-icon"><img src="img/cuncun.png" alt="存存"></div>
+      <h1>存存</h1>
+      <h3>欢迎来到存存，<br>把重要的都收好～</h3>
+      <p>账号、密码、证件、银行卡，一个 App 收好。<br>不注册、不上传，断网也能用。</p>
+      <div class="w-chips"><span>完全本地</span><span>一键导出</span><span>AI 助手</span></div>
+      <p class="w-slogan">存得住密码，也存得住牵挂</p>
+    </section>
+
+    <section class="w-slide">
+      <div class="w-tiles">
+        <div class="w-tile" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><circle cx="9" cy="15" r="4.2"/><path d="M12 12l8-8M17 4.5l2.8 2.8M14.2 7.3l2.5 2.5"/></svg><b>账号密码</b></div>
+        <div class="w-tile" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><circle cx="8.6" cy="11" r="1.9"/><path d="M5.9 16.1c.5-1.6 1.5-2.4 2.7-2.4s2.2.8 2.7 2.4"/><path d="M13.6 10.6h5M13.6 13.6h3.6"/></svg><b>身份证件</b></div>
+        <div class="w-tile" style="--c:#bf5af2"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10.4h18"/><path d="M6.8 15h4.2"/></svg><b>银行卡</b></div>
+        <div class="w-tile" style="--c:#30d158"><svg viewBox="0 0 24 24"><rect x="6.5" y="3" width="11" height="18" rx="2.6"/><path d="M10.2 18.2h3.6"/></svg><b>手机号</b></div>
+        <div class="w-tile" style="--c:#ff453a"><svg viewBox="0 0 24 24"><path d="M5 5.6A2.1 2.1 0 017.1 3.5h11.4v14.9H7.1A2.1 2.1 0 005 20.5V5.6z"/><path d="M5 18.4A2.1 2.1 0 017.1 20.5h11.4"/></svg><b>户口本</b></div>
+        <div class="w-tile" style="--c:#64d2ff"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="12" rx="3.4"/><path d="M8.6 20.2l3.1-3.2"/></svg><b>社交账号</b></div>
+        <div class="w-tile" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><path d="M12 20.5s-6.4-5.6-6.4-10a6.4 6.4 0 1112.8 0c0 4.4-6.4 10-6.4 10z"/><circle cx="12" cy="10.5" r="2.4"/></svg><b>地址电话</b></div>
+        <div class="w-tile" style="--c:#8e8e93"><svg viewBox="0 0 24 24"><path d="M12 3.6l7.2 3.6v8.4L12 20.4 4.8 15.6v-8.4L12 3.6z"/><path d="M4.8 7.2L12 10.8 19.2 7.2M12 10.8v9.6"/></svg><b>自定义</b></div>
+      </div>
+      <h3>一个地方，收好所有资料</h3>
+      <p>8 个分类随手记：账号密码、手机号、社交账号、身份证件、户口本、银行卡、地址电话、其他。<br>搜索一下就能找到。</p>
+    </section>
+
+    <section class="w-slide">
+      <div class="w-chatbox">
+        <div class="w-bub me">把震动调强</div>
+        <div class="w-bub bot">震动已设为「强」<span>（本地指令）</span></div>
+        <div class="w-bub me">记一张银行卡</div>
+        <div class="w-bub bot">已打开新建记录，填上就行</div>
+      </div>
+      <h3>一句话，AI 帮你办</h3>
+      <p>改设置、建记录、找资料，说一句就够。<br>一整段账号密码直接发给 AI，它自己归类存好。</p>
+    </section>
+
+    <section class="w-slide">
+      <div class="w-net">
+        <div class="w-node n1">妈</div>
+        <div class="w-node n2">老王</div>
+        <div class="w-node n3">小李</div>
+        <div class="w-node hub">我</div>
+      </div>
+      <h3>关系网，看清谁是谁</h3>
+      <p>把记录挂到家人、朋友、同事身上。<br>人物关系和「账号—平台」关系，都能一眼看明白。</p>
+    </section>
+
+    <section class="w-slide w-last">
+      <h3>开始之前</h3>
+      <ul class="w-rules">
+        <li><b>只存本机</b><span>不注册、不上传，记录和照片都在你手机里。</span></li>
+        <li><b>AI 只发当次内容</b><span>只有你说那句话时，才发到你填写的接口，密钥也存在本机。</span></li>
+        <li><b>备份请自己保管</b><span>导出的文件在「下载/存存」，别随手发给别人。</span></li>
+      </ul>
+      <button class="w-agree" id="wAgree"><i></i><span>我已阅读并同意《使用守则》与隐私说明</span></button>
+    </section>
+  </div>
+  <div class="w-foot">
+    <div class="w-dots" id="wDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <button class="w-next" id="wNext">下一步</button>
+  </div>
+</div>
+
+<div class="glow" id="glow"></div>
+<div class="aurora"></div>
+
+<header class="top" id="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="mark" id="brandMark"><img id="brandImg" src="img/cuncun.png" alt="存存"></div>
+      <div class="brand-txt">
+        <h1 class="brand-name">CUN CUN</h1>
+        <p id="subtitle">所有信息，只留在本机</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="round ai" id="btnAI" aria-label="AI 助手">
+        <svg viewBox="0 0 24 24"><path d="M12 3.4l1.8 4.6 4.6 1.8-4.6 1.8L12 16.2l-1.8-4.6L5.6 9.8l4.6-1.8z"/><path d="M18.4 15.4l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9z"/></svg>
+      </button>
+      <button class="round" id="btnSearchTop" aria-label="搜索">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="round" id="btnAddTop" aria-label="新增">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- 首页 -->
+  <section class="view active" id="viewHome">
+    <div class="stats">
+      <div class="stat"><b id="stTotal">0</b><span>条记录</span></div>
+      <div class="divider"></div>
+      <div class="stat"><b id="stCats">0</b><span>个分类</span></div>
+      <div class="divider"></div>
+      <div class="stat"><b id="stPhotos">0</b><span>张照片</span></div>
+    </div>
+
+    <button class="ai-entry" id="aiEntry">
+      <span class="ai-orb"><svg viewBox="0 0 24 24"><path d="M12 3.4l1.8 4.6 4.6 1.8-4.6 1.8L12 16.2l-1.8-4.6L5.6 9.8l4.6-1.8z"/></svg></span>
+      <span class="ai-entry-main"><b>让 AI 帮你</b><small>说一句话就能建记录、改设置、找资料</small></span>
+      <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+    </button>
+
+    <div class="block">
+      <div class="block-head">
+        <h2>我的分类</h2>
+        <div class="bh-acts"><button class="link stk-toggle" id="stkToggle">展开</button><button class="link" id="linkAll">全部</button></div>
+      </div>
+      <div class="wallet" id="wallet"></div>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h2>最近更新</h2>
+        <button class="link" id="linkRecent">查看全部</button>
+      </div>
+      <div class="list" id="recentList"></div>
+    </div>
+  </section>
+
+  <!-- 全部 -->
+  <section class="view" id="viewAll">
+    <div class="searchbar">
+      <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" placeholder="搜索姓名、号码、卡号、备注…" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button class="qclear" id="qClear">取消</button>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="result-meta" id="resultMeta"></div>
+    <div style="padding:2px 18px 0"><div class="list" id="allList"></div></div>
+  </section>
+
+  <!-- 关系网 -->
+  <section class="view" id="viewRel">
+    <div class="rel-head">
+      <h2>人物关系</h2>
+      <p>把记录挂到家人、朋友、同事身上，看清谁是谁</p>
+    </div>
+    <div class="graph-box" id="graphBox">
+      <svg id="graph" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="graph-empty" id="graphEmpty">
+        <div class="orb"><svg viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="2.6"/><circle cx="5.5" cy="16" r="2.6"/><circle cx="18.5" cy="16" r="2.6"/><path d="M12 8.1v3.2M11 11.4l-4 3.4M13 11.4l4 3.4"/></svg></div>
+        <h3 id="graphEmptyTitle">关系还没连起来</h3>
+        <p id="graphEmptyDesc">添加人物后，把你存的资料挂到他们身上</p>
+        <button class="primary-btn" id="graphEmptyBtn">添加第一个人物</button>
+      </div>
+      <div class="graph-tip" id="graphTip">拖动平移 · 双指缩放 · 点人物看关联</div>
+    </div>
+    <div class="rel-tools">
+      <button id="btnAddPerson">＋ 人物</button>
+      <button id="btnRelReset">重置视图</button>
+    </div>
+    <div class="rel-list" id="personList"></div>
+  </section>
+
+  <!-- 我的 -->
+  <section class="view" id="viewMe">
+    <div class="set-head">AI 助手</div>
+    <div class="set-card">
+      <button class="set-row" id="btnAICfg">
+        <span class="set-ic ai-ic"><svg viewBox="0 0 24 24"><path d="M12 3.4l1.8 4.6 4.6 1.8-4.6 1.8L12 16.2l-1.8-4.6L5.6 9.8l4.6-1.8z"/></svg></span>
+        <span class="set-main"><span class="set-title">AI 接口配置</span><span class="set-sub" id="aiSub">未配置 · 填接口地址与密钥即可使用</span></span>
+        <span class="tag" id="aiTag">未配置</span>
+      </button>
+      <button class="set-row" id="btnAIOpen">
+        <span class="set-ic" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="11" rx="3"/><path d="M9 20l3-3"/><path d="M8.5 11.5h7"/></svg></span>
+        <span class="set-main"><span class="set-title">一句话操作</span><span class="set-sub">说出需求，AI 帮你改设置 / 建记录</span></span>
+      </button>
+    </div>
+
+    <div class="set-head">个性化</div>
+    <div class="set-card">
+      <div class="set-row">
+        <span class="set-ic" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="4"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
+        <span class="set-main"><span class="set-title">震动触感</span><span class="set-sub" id="hapSub">中等 · 点按有轻微反馈</span></span>
+        <span class="seg-mini" id="segHap">
+          <button data-hap="0">关</button>
+          <button data-hap="1">轻</button>
+          <button data-hap="2">中</button>
+          <button data-hap="3">强</button>
+        </span>
+      </div>
+      <button class="set-row" id="btnIcon">
+        <span class="set-ic icon-ic"><img id="iconPreview" src="img/cuncun.png" alt=""></span>
+        <span class="set-main"><span class="set-title">应用图标</span><span class="set-sub">换一张你喜欢的图，应用内立刻生效</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+    </div>
+
+    <div class="set-head">数据</div>
+    <div class="set-card">
+      <button class="set-row" id="btnExport">
+        <span class="set-ic" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><path d="M12 4v10m0 0l-3.5-3.5M12 14l3.5-3.5"/><path d="M5 17.5V19a1 1 0 001 1h12a1 1 0 001-1v-1.5"/></svg></span>
+        <span class="set-main"><span class="set-title">一键导出备份</span><span class="set-sub">生成备份文件，存到「下载/存存」</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+      <button class="set-row" id="btnCsv">
+        <span class="set-ic" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 9v11"/></svg></span>
+        <span class="set-main"><span class="set-title">导出为表格</span><span class="set-sub">CSV 文件，可用 Excel 打开</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+      <button class="set-row" id="btnImport">
+        <span class="set-ic" style="--c:#30d158"><svg viewBox="0 0 24 24"><path d="M12 15V5m0 0l-3.5 3.5M12 5l3.5 3.5"/><path d="M5 17.5V19a1 1 0 001 1h12a1 1 0 001-1v-1.5"/></svg></span>
+        <span class="set-main"><span class="set-title">从备份恢复</span><span class="set-sub">选择之前导出的备份文件</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+    </div>
+
+    <div class="set-head">安全</div>
+    <div class="set-card">
+      <div class="set-row">
+        <span class="set-ic" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2.5"/><path d="M8.5 10V7.5a3.5 3.5 0 017 0V10"/></svg></span>
+        <span class="set-main"><span class="set-title">应用锁</span><span class="set-sub" id="lockSub">未开启 · 打开应用需输入密码</span></span>
+        <span class="switch" id="swLock"></span>
+      </div>
+      <div class="set-row">
+        <span class="set-ic" style="--c:#bf5af2"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span class="set-main"><span class="set-title">隐私模式</span><span class="set-sub">禁止截屏与录屏，防止被后台截取</span></span>
+        <span class="switch" id="swSecure"></span>
+      </div>
+      <button class="set-row" id="btnGuide">
+        <span class="set-ic" style="--c:#ffd60a"><svg viewBox="0 0 24 24"><path d="M5 5.6A2.1 2.1 0 017.1 3.5h11.4v14.9H7.1A2.1 2.1 0 005 20.5V5.6z"/><path d="M5 18.4A2.1 2.1 0 017.1 20.5h11.4"/></svg></span>
+        <span class="set-main"><span class="set-title">使用守则</span><span class="set-sub">数据去向、AI 边界、备份与找回</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+    </div>
+
+    <div class="set-head">关于</div>
+    <div class="set-card">
+      <div class="set-row">
+        <span class="set-ic icon-ic"><img id="iconPreview2" src="img/cuncun.png" alt=""></span>
+        <span class="set-main"><span class="set-title">存存 CunCun</span><span class="set-sub" id="aboutSub">版本 1.1.0</span></span>
+        <span class="tag" id="aboutTag">本地存储</span>
+      </div>
+      <button class="set-row" id="btnMail">
+        <span class="set-ic" style="--c:#64d2ff"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="M4.5 7l7.5 6 7.5-6"/></svg></span>
+        <span class="set-main"><span class="set-title">作者邮箱</span><span class="set-sub">3372991529@qq.com</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+      <button class="set-row" id="btnGithub">
+        <span class="set-ic" style="--c:#8e8e93"><svg viewBox="0 0 24 24"><path d="M9.6 14.4l4.8-4.8"/><path d="M13.2 5.4l1.5-1.5a4.1 4.1 0 015.8 5.8l-1.5 1.5"/><path d="M10.8 18.6l-1.5 1.5a4.1 4.1 0 01-5.8-5.8l1.5-1.5"/><path d="M8.4 15.6l7.2-7.2"/></svg></span>
+        <span class="set-main"><span class="set-title">GitHub 开源地址</span><span class="set-sub">github.com/zmy531/cuncun</span></span>
+        <svg class="chev" viewBox="0 0 7 12"><path d="M1 1l5 5-5 5"/></svg>
+      </button>
+      <div class="set-row">
+        <span class="set-ic" style="--c:#8e8e93"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v.5M12 11v5"/></svg></span>
+        <span class="set-main"><span class="set-title">存储占用</span><span class="set-sub" id="usageSub">—</span></span>
+      </div>
+    </div>
+
+    <p class="footnote">存存不需要注册账号。记录内容由你自己保管，导出的备份文件请妥善存放。AI 调用只发送你当次输入的内容。</p>
+
+    <div class="set-card" style="margin-bottom:8px">
+      <button class="set-row" id="btnWipe">
+        <span class="set-ic" style="--c:#ff453a"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></span>
+        <span class="set-main"><span class="set-title" style="color:var(--red)">清空全部数据</span><span class="set-sub">删除本机所有记录，不可恢复</span></span>
+      </button>
+    </div>
+  </section>
+</main>
+
+<nav class="tabbar" id="tabbar">
+  <b class="thumb" id="thumb"></b>
+  <button data-tab="home" class="active">
+    <svg viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5"/><path d="M6.5 9.5V19h11V9.5"/></svg><span>首页</span>
+  </button>
+  <button data-tab="all">
+    <svg viewBox="0 0 24 24"><rect x="4" y="4.5" width="16" height="6" rx="2"/><rect x="4" y="13.5" width="16" height="6" rx="2"/></svg><span>全部</span>
+  </button>
+  <button data-tab="rel">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="2.6"/><circle cx="5.5" cy="16" r="2.6"/><circle cx="18.5" cy="16" r="2.6"/><path d="M12 8.1v3.2M11 11.4l-4 3.4M13 11.4l4 3.4"/></svg><span>关系</span>
+  </button>
+  <button data-tab="me">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5.5 19c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5"/></svg><span>我的</span>
+  </button>
+</nav>
+
+<button class="fab" id="fab" aria-label="新增记录">
+  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+  <i class="fab-ring"></i>
+</button>
+
+<div class="scrim" id="scrim"></div>
+
+<div class="sheet" id="sheetDetail">
+  <div class="grabber"></div>
+  <div class="sheet-inner"><div class="sheet-scroll" id="detailBody"></div></div>
+</div>
+
+<div class="sheet" id="sheetEdit">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar">
+      <button class="ghost" id="editCancel">取消</button>
+      <span class="t" id="editTitle">新增记录</span>
+      <button class="ghost right" id="editSave">保存</button>
+    </div>
+    <div class="sheet-scroll" id="editBody"></div>
+  </div>
+</div>
+
+<!-- 人物面板 -->
+<div class="sheet" id="sheetPerson">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar">
+      <button class="ghost" id="personCancel">取消</button>
+      <span class="t" id="personTitle">添加人物</span>
+      <button class="ghost right" id="personSave">保存</button>
+    </div>
+    <div class="sheet-scroll" id="personBody"></div>
+  </div>
+</div>
+
+<!-- 人物详情 -->
+<div class="sheet" id="sheetPersonDetail">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar">
+      <button class="ghost" id="pdClose">关闭</button>
+      <span class="t" id="pdTitle">人物</span>
+      <span class="ghost right"></span>
+    </div>
+    <div class="sheet-scroll" id="pdBody"></div>
+  </div>
+</div>
+
+<!-- AI 助手 -->
+<div class="sheet ai-sheet" id="sheetAI">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar">
+      <span class="ai-badge"><i></i>AI 助手</span>
+      <span class="t">说一句话就行</span>
+      <button class="ghost right" id="aiClose">关闭</button>
+    </div>
+    <div class="sheet-scroll ai-scroll">
+      <div class="ai-hero" id="aiHero">
+        <b class="ai-hero-t">我可以这样帮</b>
+        <div class="ai-hero-grid">
+          <div class="ai-hero-item"><span class="ai-hi" style="--c:#7a5cff"><svg viewBox="0 0 24 24"><path d="M6 4v7a6 6 0 0012 0V4"/><path d="M6 8h12"/></svg></span><div><b>一句话改设置</b><p>震动强弱、隐私模式、导出备份，说出来就生效</p></div></div>
+          <div class="ai-hero-item"><span class="ai-hi" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 10h8M8 14h5"/></svg></span><div><b>整段贴进来</b><p>账号密码不用管格式，自动认出平台、分类存好</p></div></div>
+          <div class="ai-hero-item"><span class="ai-hi" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M12 13v7M9.5 17h5"/></svg></span><div><b>先填密钥</b><p>「我的 → AI 接口配置」，支持 OpenAI 兼容接口</p></div></div>
+        </div>
+      </div>
+      <div class="ai-log" id="aiLog"></div>
+      <div class="ai-quick" id="aiQuick"></div>
+    </div>
+    <div class="ai-bar">
+      <textarea id="aiInput" rows="1" placeholder="说一句话，或把整段账号密码粘进来（不用排版）"></textarea>
+      <button class="ai-send" id="aiSend"><svg viewBox="0 0 24 24"><path d="M12 19V5m0 0l-6 6M12 5l6 6"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<!-- AI 配置 -->
+<div class="sheet" id="sheetAICfg">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar">
+      <button class="ghost" id="cfgCancel">取消</button>
+      <span class="t">AI 接口配置</span>
+      <button class="ghost right" id="cfgSave">保存</button>
+    </div>
+    <div class="sheet-scroll">
+      <div class="cfg-tip">支持 OpenAI 兼容接口（OpenAI / 火山方舟 / DeepSeek / 自建代理均可）。密钥只存在本机。</div>
+      <label class="cfg-field"><span>接口地址</span><input id="cfgBase" placeholder="https://api.openai.com/v1" autocomplete="off" spellcheck="false"></label>
+      <label class="cfg-field"><span>模型名</span><input id="cfgModel" placeholder="gpt-4o-mini" autocomplete="off" spellcheck="false"></label>
+      <label class="cfg-field"><span>API Key</span><input id="cfgKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false"></label>
+      <div class="cfg-row"><button class="ghostbtn" id="cfgTest">测试连接</button><span class="cfg-state" id="cfgState"></span></div>
+      <div class="cfg-note">测试会发送一句「你好」到你的接口，用来确认地址与密钥可用。</div>
+    </div>
+  </div>
+</div>
+
+<div class="dialog-layer" id="dialogLayer"><div class="dialog" id="dialogBox"></div></div>
+
+<!-- 使用守则 -->
+<div class="sheet" id="sheetGuide">
+  <div class="grabber"></div>
+  <div class="sheet-inner">
+    <div class="sheet-bar"><span class="ghost"></span><span class="t">使用守则</span><button class="ghost right" id="guideClose">关闭</button></div>
+    <div class="sheet-scroll">
+      <div class="guide">
+        <div class="g-item"><i style="background:#0a84ff"></i><div><b>数据只在你的手机里</b><p>存存不注册账号、不上传服务器。记录和照片全部保存在本机，卸载或清空数据后无法恢复。</p></div></div>
+        <div class="g-item"><i style="background:#7a5cff"></i><div><b>AI 是可选的</b><p>只有你主动说一句话时，才会把这一句内容发到你填写的接口。接口地址与密钥也存在本机，随时可改、可删。</p></div></div>
+        <div class="g-item"><i style="background:#30d158"></i><div><b>导出的备份自己保管</b><p>备份文件在「下载/存存」。开启应用锁后导出的是加密文件，未开启则是明文，请不要随手发给别人。</p></div></div>
+        <div class="g-item"><i style="background:#ff9f0a"></i><div><b>敏感信息建议开隐私模式</b><p>隐私模式会在系统层面禁止截屏与录屏，防止被后台或他人截取画面。</p></div></div>
+        <div class="g-item"><i style="background:#ff453a"></i><div><b>应用锁密码无法找回</b><p>忘记密码只能清空数据重来。开启应用锁前，请先导出一份备份。</p></div></div>
+        <div class="g-item"><i style="background:#64d2ff"></i><div><b>换机、清缓存前先备份</b><p>浏览器缓存（WebView 数据）被系统清理时，记录会一起消失。定期导出一份最稳妥。</p></div></div>
+        <p class="g-foot">作者邮箱 3372991529@qq.com · GitHub github.com/zmy531/cuncun</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 批量识别已移除：整段内容直接发给 AI 即可 -->
+
+<div class="viewer" id="viewer"><img id="viewerImg" alt=""></div>
+
+<div class="lock" id="lock">
+  <div class="mark"><img src="img/cuncun.png" alt=""></div>
+  <h2>存存已锁定</h2>
+  <p>输入应用锁密码，解锁你的资料</p>
+  <input id="lockPwd" type="password" inputmode="numeric" placeholder="密码" autocomplete="off">
+  <div class="tip" id="lockTip"></div>
+  <button class="unlock" id="lockBtn">解锁</button>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span id="toastTxt"></span></div>
+
+<input type="file" id="filePick" accept=".json,.cuncun,.txt,application/json,text/plain" style="display:none">
+<input type="file" id="iconPick" accept="image/*" style="display:none">
+<script src="seed.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
