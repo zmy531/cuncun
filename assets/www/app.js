@@ -1652,7 +1652,10 @@
 
     var coords = [];
     persons.forEach(function (p, i) {
-      var a = -Math.PI / 2 + (i + off) * step;
+      var a;
+      // 只有两个人时排成左右上斜角（三角形），否则会和我连成一条横线
+      if (n === 2) a = -Math.PI / 2 + (i === 0 ? -0.62 : 0.62);
+      else a = -Math.PI / 2 + (i + off) * step;
       coords.push({ x: Math.round(cx + Math.cos(a) * R), y: Math.round(cy + Math.sin(a) * R) });
     });
     coords.forEach(function (c, i) {
