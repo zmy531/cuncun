@@ -6,7 +6,7 @@
 
 - 包名：`com.cuncun.app`
 - 版本：1.5.1（versionCode 14）
-- 作者：郑鸣阳 · 3372991529@qq.com
+- 作者：zmy · 3372991529@qq.com
 - 仓库：https://github.com/zmy531/cuncun
 
 ---
